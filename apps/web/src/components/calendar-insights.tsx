@@ -127,7 +127,7 @@ export function CalendarPerformance({ data, query }: { data: CalendarResponse; q
           {mixed && (
             <p
               role="status"
-              className="rounded-lg border bg-muted/40 px-4 py-3 text-sm text-muted-foreground"
+              className="rounded-lg inset-outline bg-muted/40 px-4 py-3 text-sm text-muted-foreground"
             >
               These trades use {currencies.join(", ")}. Select accounts with one currency to compare
               monetary performance; no exchange-rate conversion is applied.
@@ -244,7 +244,7 @@ export function CalendarPerformance({ data, query }: { data: CalendarResponse; q
                         </span>
                       </div>
                     )}
-                    <details className="mt-3 border-t pt-3">
+                    <details className="mt-3 inset-divider-t pt-3">
                       <summary className="cursor-pointer rounded text-xs text-muted-foreground outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring">
                         Daily values & trade links ({i.tradingDays})
                       </summary>
@@ -360,7 +360,7 @@ export function CalendarPerformance({ data, query }: { data: CalendarResponse; q
                       ))}
                     </div>
                     {selected && (
-                      <div className="mt-3 border-t pt-3" aria-live="polite">
+                      <div className="mt-3 inset-divider-t pt-3" aria-live="polite">
                         <p className="mb-2 text-xs font-medium">
                           {selected.label} · {selected.trades} trades across {selected.days.length}{" "}
                           days
@@ -370,7 +370,7 @@ export function CalendarPerformance({ data, query }: { data: CalendarResponse; q
                             <Link
                               key={day.date}
                               href={href(day.date)}
-                              className="rounded-md border px-2 py-1.5 text-xs outline-none hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring"
+                              className="rounded-md inset-outline px-2 py-1.5 text-xs outline-none hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring"
                             >
                               {dateLabel(day.date)}{" "}
                               <span className="text-muted-foreground">· {day.trades} trades</span>

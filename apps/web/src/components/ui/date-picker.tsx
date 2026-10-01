@@ -99,7 +99,7 @@ export function DatePicker({
           align="start"
           sideOffset={8}
           collisionPadding={12}
-          className="journal-popup journal-menu-surface z-50 w-[296px] max-w-[calc(100vw-24px)] max-h-[var(--radix-popover-content-available-height)] overflow-y-auto rounded-xl border bg-popover p-3 text-popover-foreground outline-none"
+          className="journal-popup journal-menu-surface z-50 w-[296px] max-w-[calc(100vw-24px)] max-h-[var(--radix-popover-content-available-height)] overflow-y-auto rounded-xl bg-popover p-3 text-popover-foreground outline-none"
         >
           <Calendar
             mode="single"
@@ -109,7 +109,7 @@ export function DatePicker({
             onSelect={(date) => select(date ? formatDateInput(date) : "")}
             disabled={(date) => !allowed(formatDateInput(date))}
           />
-          <div className="mt-3 flex items-center justify-between border-t pt-2">
+          <div className="mt-3 flex items-center justify-between inset-divider-t pt-2">
             <Button variant="ghost" size="sm" disabled={!draft} onClick={() => select("")}>
               Clear
             </Button>

@@ -61,7 +61,7 @@ export function TradeExplorer({ query }: { query: string }) {
     );
   if (error || !data)
     return (
-      <div role="alert" className="rounded-xl border p-5">
+      <div role="alert" className="rounded-xl inset-outline p-5">
         <p className="text-sm text-destructive">{error ?? "Unable to load trade explorer."}</p>
         <Button onClick={refresh} variant="outline" size="sm" className="mt-3">
           Try again
@@ -348,7 +348,7 @@ export function TradeExplorer({ query }: { query: string }) {
                   </p>
                   <div aria-live="polite">
                     {selected && (
-                      <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-muted/20 p-4">
+                      <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg inset-outline bg-muted/20 p-4">
                         <div>
                           <p className="text-sm font-medium break-all">
                             {selected.symbol} · {selected.direction} · {value(selected)}
@@ -399,7 +399,7 @@ export function TradeExplorer({ query }: { query: string }) {
           </Card>
         ) : (
           <details
-            className="rounded-xl border bg-card"
+            className="rounded-xl inset-outline bg-card"
             onToggle={(event) => setTableOpen(event.currentTarget.open)}
           >
             <summary className="cursor-pointer rounded-xl px-4 py-3 text-sm font-medium">

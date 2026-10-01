@@ -37,7 +37,7 @@ export function PropCashSummary({
           <p className="mt-3 text-xs text-muted-foreground">
             All fees, subscriptions and other costs
           </p>
-          <div className="mt-4 flex flex-wrap justify-between gap-2 border-t pt-3 text-xs">
+          <div className="mt-4 flex flex-wrap justify-between gap-2 inset-divider-t pt-3 text-xs">
             <span className="text-muted-foreground">
               Refunded <span className="text-foreground">{money(summary.refunds)}</span>
             </span>
@@ -55,7 +55,7 @@ export function PropCashSummary({
           </p>
           <p className="type-stat mt-3 break-words">{money(summary.received)}</p>
           <p className="mt-3 text-xs text-muted-foreground">Money received, after any reversals</p>
-          <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">
+          <p className="mt-4 inset-divider-t pt-3 text-xs text-muted-foreground">
             Pending requests are tracked separately below.
           </p>
         </CardContent>
@@ -81,7 +81,7 @@ export function PropCashSummary({
           <p className="mt-3 text-xs text-muted-foreground">
             Payouts received + refunds − money spent
           </p>
-          <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">
+          <p className="mt-4 inset-divider-t pt-3 text-xs text-muted-foreground">
             Return on net cost{" "}
             <span className="text-foreground">
               {privacy
@@ -190,7 +190,7 @@ export function PropCashComparison({
                             </p>
                           ))}
                           <p>Refunds: {propMoney(payload[0]!.payload.refunds, currency)}</p>
-                          <p className="mt-1 border-t pt-1">
+                          <p className="mt-1 inset-divider-t pt-1">
                             Net after costs: {propMoney(payload[0]!.payload.net, currency)}
                           </p>
                         </div>

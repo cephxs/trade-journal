@@ -41,7 +41,7 @@ function SelectContent({
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         className={cn(
-          "journal-popup journal-menu-surface relative z-50 max-h-[min(24rem,var(--radix-select-content-available-height))] min-w-[8rem] max-w-[calc(100vw-24px)] overflow-hidden rounded-xl border bg-popover text-popover-foreground",
+          "journal-popup journal-menu-surface relative z-50 max-h-[min(24rem,var(--radix-select-content-available-height))] min-w-[8rem] max-w-[calc(100vw-24px)] overflow-hidden rounded-xl bg-popover text-popover-foreground",
           position === "popper" && "min-w-[var(--radix-select-trigger-width)]",
           className,
         )}

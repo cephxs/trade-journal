@@ -135,7 +135,7 @@ export function FilterFields({
           ["equity", "futures", "forex", "option", "crypto", "cfd", "other"].map((v) => [v, v]),
         )}
       </div>
-      <fieldset className="journal-filter-accounts rounded-lg border p-3">
+      <fieldset className="journal-filter-accounts rounded-lg inset-outline p-3">
         <legend className="px-1 text-xs text-muted-foreground">
           Accounts · none selected means all
         </legend>

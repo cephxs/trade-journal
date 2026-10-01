@@ -90,7 +90,7 @@ export function ManualTradeEntry({ onSaved }: { onSaved: () => void }) {
         {legs.map((leg, index) => (
           <fieldset
             key={index}
-            className="manual-execution-row grid min-w-0 gap-2 rounded-lg border p-3"
+            className="manual-execution-row grid min-w-0 gap-2 rounded-lg inset-outline p-3"
           >
             <legend className="px-1 text-xs text-muted-foreground">Execution {index + 1}</legend>
             <label className="manual-execution-date grid min-w-0 gap-1 text-xs text-muted-foreground">

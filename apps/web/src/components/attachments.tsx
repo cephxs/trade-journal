@@ -18,7 +18,7 @@ export function Attachments({
     [failure, setFailure] = useState("");
   const input = useRef<HTMLInputElement>(null);
   return (
-    <div className="space-y-3 border-t pt-3">
+    <div className="space-y-3 inset-divider-t pt-3">
       <div className="flex flex-wrap items-center gap-2">
         <Button
           type="button"
@@ -69,7 +69,7 @@ export function Attachments({
       )}
       <div className="grid grid-cols-2 gap-2">
         {data?.attachments.map((a) => (
-          <div key={a.id} className="min-w-0 rounded-md border p-2">
+          <div key={a.id} className="min-w-0 rounded-md inset-outline p-2">
             <HoverHint content={a.name}>
               <a
                 href={`/api/attachments/${a.id}`}

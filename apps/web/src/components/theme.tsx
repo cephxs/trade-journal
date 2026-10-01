@@ -44,7 +44,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       {error && (
         <p
           role="status"
-          className="fixed bottom-4 right-4 z-50 max-w-[calc(100vw-32px)] rounded-lg border bg-popover px-4 py-3 text-sm text-popover-foreground shadow-lg"
+          className="fixed bottom-4 right-4 z-50 max-w-[calc(100vw-32px)] rounded-lg bg-popover px-4 py-3 text-sm text-popover-foreground inset-outline-floating"
         >
           {error}
         </p>

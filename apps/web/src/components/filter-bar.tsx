@@ -65,12 +65,12 @@ export function FilterBar({ title, actions }: { title: string; actions?: React.R
   };
   return (
     <>
-      <div className="journal-filter-bar sticky z-10 flex min-h-14 min-w-0 flex-wrap items-center gap-2 border-b bg-background/95 px-4 py-2 backdrop-blur">
+      <div className="journal-filter-bar sticky z-10 flex min-h-14 min-w-0 flex-wrap items-center gap-2 inset-divider-b bg-background/95 px-4 py-2 backdrop-blur">
         <h1 className="type-h3-sm mr-auto min-w-0">{title}</h1>
         {showFilters && (
           <>
             <AccountSelector />
-            <div className="flex max-w-full shrink-0 items-center rounded-md border p-0.5">
+            <div className="flex max-w-full shrink-0 items-center rounded-md inset-outline p-0.5">
               {["7d", "30d", "90d", "ytd", "all"].map((range) => (
                 <Button
                   key={range}

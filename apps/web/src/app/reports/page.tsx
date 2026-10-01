@@ -425,7 +425,7 @@ function Comparison({ initial }: { initial: AnalysisFilters }) {
         characteristics. Groups may overlap.
       </p>
       {multi && (
-        <p role="alert" className="rounded-md border p-3 text-sm">
+        <p role="alert" className="rounded-md inset-outline p-3 text-sm">
           Select accounts with the same currency in both groups. Currency conversion is not applied.
         </p>
       )}

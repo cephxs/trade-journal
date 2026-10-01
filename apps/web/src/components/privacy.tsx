@@ -87,7 +87,7 @@ export function PrivacyToggle({
           role="alert"
           className={
             compact
-              ? "absolute right-0 top-full mt-2 w-64 rounded-lg border bg-card p-3 text-xs text-destructive shadow-lg"
+              ? "absolute right-0 top-full mt-2 w-64 rounded-lg bg-card p-3 text-xs text-destructive inset-outline-floating"
               : "text-xs text-destructive"
           }
         >

@@ -493,7 +493,7 @@ function Trades() {
               </table>
             </div>
             {sortedRows.length > pageSize && (
-              <div className="flex flex-wrap items-center justify-between gap-3 border-t px-4 py-3 text-xs text-muted-foreground">
+              <div className="flex flex-wrap items-center justify-between gap-3 inset-divider-t px-4 py-3 text-xs text-muted-foreground">
                 <span>
                   {currentPage * pageSize + 1}–
                   {Math.min((currentPage + 1) * pageSize, sortedRows.length)} of{" "}

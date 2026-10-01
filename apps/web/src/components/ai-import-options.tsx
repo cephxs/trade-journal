@@ -70,7 +70,7 @@ export function AiImportOptions({
           sideOffset={8}
           collisionPadding={12}
           aria-label="AI parsing settings"
-          className="z-50 w-[360px] max-w-[calc(100vw-24px)] max-h-[var(--radix-popover-content-available-height)] overflow-y-auto rounded-xl border bg-popover p-4 text-popover-foreground shadow-xl"
+          className="z-50 w-[360px] max-w-[calc(100vw-24px)] max-h-[var(--radix-popover-content-available-height)] overflow-y-auto rounded-xl bg-popover p-4 text-popover-foreground inset-outline-floating"
         >
           <div className="mb-3 flex items-center justify-between">
             <span className="text-sm font-medium">AI parsing settings</span>

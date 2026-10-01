@@ -73,7 +73,7 @@ export function TimeZonePicker({
           aria-label={`${label} options`}
           sideOffset={6}
           collisionPadding={12}
-          className="journal-popup journal-menu-surface z-50 flex max-h-[min(24rem,var(--radix-popover-content-available-height))] w-[var(--radix-popover-trigger-width)] max-w-[calc(100vw-24px)] flex-col overflow-hidden rounded-xl border bg-popover p-1.5 text-popover-foreground"
+          className="journal-popup journal-menu-surface z-50 flex max-h-[min(24rem,var(--radix-popover-content-available-height))] w-[var(--radix-popover-trigger-width)] max-w-[calc(100vw-24px)] flex-col overflow-hidden rounded-xl bg-popover p-1.5 text-popover-foreground"
           onOpenAutoFocus={(event) => {
             event.preventDefault();
             input.current?.focus();

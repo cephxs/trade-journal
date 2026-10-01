@@ -20,7 +20,7 @@ export function RelativeDrawdownBars({ data }: { data: RelativeDrawdownPoint[] }
   if (!tokens) return <div className="h-24" />;
 
   return (
-    <div className="mt-2 border-t pt-3">
+    <div className="mt-2 inset-divider-t pt-3">
       <div className="mb-1 flex items-center justify-between gap-3 type-h5 text-muted-foreground">
         <span>Relative drawdown</span>
         <span className="tnum text-loss">
