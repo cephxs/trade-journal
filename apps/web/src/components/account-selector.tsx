@@ -65,7 +65,7 @@ export function AccountSelector() {
             {loadingDemo ? "Loading demo…" : label}
           </span>
         </SelectTrigger>
-        <SelectContent className="rounded-2xl border-white/10 p-1 shadow-2xl" align="end">
+        <SelectContent className="rounded-2xl p-1" align="end">
           <SelectItem value="all" className="rounded-lg text-xs">
             All accounts
           </SelectItem>
@@ -84,7 +84,7 @@ export function AccountSelector() {
                 </span>
               </SelectItem>
             ))}
-          <div className="my-1 border-t" />
+          <div className="my-1 inset-divider-t" />
           <SelectItem value={demo?.id ?? "load-demo"} className="rounded-lg text-xs">
             <span className="flex items-center gap-2">
               <FlaskConical className="h-3.5 w-3.5 text-muted-foreground" />

@@ -77,7 +77,7 @@ function ScopedAskJournal({ filters, timeZone }: { filters: AnalysisFilters; tim
             <button
               key={suggestion}
               disabled={busy}
-              className="rounded-full border px-2.5 py-1 text-xs text-muted-foreground hover:bg-accent disabled:cursor-wait disabled:opacity-50"
+              className="rounded-full inset-outline px-2.5 py-1 text-xs text-muted-foreground hover:bg-accent disabled:cursor-wait disabled:opacity-50"
               onClick={() => {
                 setQuestion(suggestion);
                 void ask(suggestion);

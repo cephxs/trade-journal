@@ -44,7 +44,7 @@ export function ReportOverview({ query, filters }: { query: string; filters: Ana
   if (loading || !data) return <Skeleton className="h-72" />;
   if (data.currencies.length > 1)
     return (
-      <p className="rounded-lg border p-4 text-sm">
+      <p className="rounded-lg inset-outline p-4 text-sm">
         These accounts use different currencies ({data.currencies.join(", ")}). Select accounts with
         the same currency in Filters to compare monetary results.
       </p>

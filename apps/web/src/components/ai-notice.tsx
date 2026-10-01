@@ -24,7 +24,7 @@ export function AiNotice({
       role={feedback.tone === "error" ? "alert" : "status"}
       aria-labelledby={`${id}-title`}
       aria-describedby={`${id}-description`}
-      className="flex items-start gap-3 rounded-xl border bg-muted/25 p-4"
+      className="flex items-start gap-3 rounded-xl inset-outline bg-muted/25 p-4"
     >
       <span
         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${feedback.tone === "error" ? "bg-destructive/10 text-destructive" : "bg-muted text-muted-foreground"}`}

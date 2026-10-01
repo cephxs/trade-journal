@@ -351,7 +351,7 @@ export function DashboardLayout({ widgets }: { widgets: Widget[] }) {
         />
       </div>
       {hiddenCount > 0 && (
-        <div className="flex flex-wrap items-center gap-2 rounded-lg border bg-card px-3 py-2 text-sm">
+        <div className="flex flex-wrap items-center gap-2 rounded-lg inset-outline bg-card px-3 py-2 text-sm">
           <span>
             {hiddenCount} {hiddenCount === 1 ? "card is" : "cards are"} hidden in this layout.
           </span>

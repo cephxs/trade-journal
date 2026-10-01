@@ -43,7 +43,7 @@ export function RuleChecklist({
             {data.rules.map((r) => (
               <label
                 key={r.rule}
-                className="flex items-center justify-between gap-3 border-t pt-2 text-sm"
+                className="flex items-center justify-between gap-3 inset-divider-t pt-2 text-sm"
               >
                 <span>{r.rule}</span>
                 <OptionSelect

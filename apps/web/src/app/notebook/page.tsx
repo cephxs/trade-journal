@@ -139,7 +139,7 @@ function Notebook() {
         }
       />
       <div className="notebook-workspace" data-note-open={Boolean(selected)}>
-        <div className="notebook-folders min-w-0 space-y-0.5 overflow-y-auto border-r p-2">
+        <div className="notebook-folders min-w-0 space-y-0.5 overflow-y-auto inset-divider-r p-2">
           <button
             className={cn(
               "w-full rounded-md px-2.5 py-1.5 text-left text-sm",
@@ -181,8 +181,8 @@ function Notebook() {
           </Button>
         </div>
 
-        <div className="notebook-list min-w-0 overflow-y-auto border-r">
-          <div className="sticky top-0 z-[1] space-y-2 border-b bg-background p-2">
+        <div className="notebook-list min-w-0 overflow-y-auto inset-divider-r">
+          <div className="sticky top-0 z-[1] space-y-2 inset-divider-b bg-background p-2">
             <div className="flex min-w-0 items-center gap-2 xl:hidden">
               <OptionSelect
                 aria-label="Note folder"
@@ -229,7 +229,7 @@ function Notebook() {
             <button
               key={note.id}
               className={cn(
-                "block w-full border-b px-3 py-2.5 text-left hover:bg-accent/40",
+                "block w-full inset-divider-b px-3 py-2.5 text-left hover:bg-accent/40",
                 selectedId === note.id && "bg-accent/60",
               )}
               onClick={() => setSelectedId(note.id)}

@@ -89,7 +89,7 @@ function Connection({
     }
   };
   return (
-    <div className="space-y-3 rounded-lg border p-3">
+    <div className="space-y-3 rounded-lg inset-outline p-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="text-sm font-medium">{connection.name}</h3>
         <span className="text-xs text-muted-foreground">
