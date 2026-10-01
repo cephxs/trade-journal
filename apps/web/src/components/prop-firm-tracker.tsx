@@ -356,10 +356,10 @@ export function PropFirmTracker() {
               {demo ? "Exit demo" : "Load demo data"}
             </Button>
             <details className="relative">
-              <summary className="cursor-pointer rounded-md border px-3 py-2 text-xs font-medium">
+              <summary className="cursor-pointer rounded-md inset-outline px-3 py-2 text-xs font-medium">
                 Data tools
               </summary>
-              <div className="absolute right-0 z-20 mt-2 flex w-48 flex-col gap-1 rounded-lg border bg-card p-2 shadow-lg">
+              <div className="absolute right-0 z-20 mt-2 flex w-48 flex-col gap-1 rounded-lg bg-card p-2 inset-outline-floating">
                 <Button
                   size="sm"
                   variant="outline"
@@ -383,10 +383,7 @@ export function PropFirmTracker() {
           </div>
         </div>
         {demo && (
-          <div
-            role="status"
-            className="rounded-lg border border-primary/30 bg-primary/5 p-4 text-sm"
-          >
+          <div role="status" className="rounded-lg inset-outline-strong bg-primary/5 p-4 text-sm">
             <span className="font-medium">Demo preview</span>
             <span className="ml-2 text-muted-foreground">
               Simulated records · Read-only · Nothing is saved
@@ -394,7 +391,7 @@ export function PropFirmTracker() {
           </div>
         )}
         {privacy && (
-          <p className="rounded-lg border p-3 text-sm text-muted-foreground">
+          <p className="rounded-lg inset-outline p-3 text-sm text-muted-foreground">
             Privacy mode hides amounts, charts and financial details. Turn it off to edit records or
             export cash data.
           </p>
@@ -402,7 +399,7 @@ export function PropFirmTracker() {
         {error && !demo && (
           <p
             role="alert"
-            className="rounded-lg border border-destructive p-3 text-sm text-destructive"
+            className="rounded-lg inset-outline-destructive p-3 text-sm text-destructive"
           >
             {error}{" "}
             <Button variant="ghost" onClick={refresh}>
@@ -432,7 +429,7 @@ export function PropFirmTracker() {
                 </CardContent>
               </Card>
             )}
-            <details className="rounded-xl border bg-card">
+            <details className="rounded-xl inset-outline bg-card">
               <summary className="cursor-pointer px-4 py-3 text-sm">
                 <span className="font-medium">Filters</span>
                 <span className="ml-3 text-xs text-muted-foreground">
@@ -441,7 +438,7 @@ export function PropFirmTracker() {
                   {selectedCurrency ? ` · ${selectedCurrency}` : " · Choose currency"}
                 </span>
               </summary>
-              <div className="grid gap-3 border-t p-4 sm:grid-cols-2 xl:grid-cols-5">
+              <div className="grid gap-3 inset-divider-t p-4 sm:grid-cols-2 xl:grid-cols-5">
                 <Field label="Firm">
                   <OptionSelect
                     value={firm}
@@ -580,7 +577,7 @@ export function PropFirmTracker() {
               <div className="space-y-4">
                 <PropCashComparison months={months} currency={selectedCurrency} privacy={privacy} />
                 <details
-                  className="rounded-xl border bg-card"
+                  className="rounded-xl inset-outline bg-card"
                   open={showBreakdowns}
                   onToggle={(event) => setShowBreakdowns(event.currentTarget.open)}
                 >
@@ -592,7 +589,7 @@ export function PropFirmTracker() {
                     </span>
                   </summary>
                   {showBreakdowns && (
-                    <div className="space-y-4 border-t p-3 sm:p-4">
+                    <div className="space-y-4 inset-divider-t p-3 sm:p-4">
                       <div className="grid gap-4 xl:grid-cols-3">
                         <Card className="xl:col-span-2">
                           <CardHeader>
@@ -664,7 +661,7 @@ export function PropFirmTracker() {
                               phases. Active and voluntarily closed phases are excluded; this is not
                               a whole-challenge success rate.
                             </p>
-                            <p className="border-t pt-4 text-xs text-muted-foreground">
+                            <p className="inset-divider-t pt-4 text-xs text-muted-foreground">
                               Link accounts to journal trades from account details. Funding sizes
                               are descriptive and never counted as your cash investment.
                             </p>
@@ -750,7 +747,7 @@ export function PropFirmTracker() {
                               {renewals.map((a) => (
                                 <div
                                   key={a.id}
-                                  className="flex flex-wrap items-center justify-between gap-3 rounded-lg border p-3"
+                                  className="flex flex-wrap items-center justify-between gap-3 rounded-lg inset-outline p-3"
                                 >
                                   <div>
                                     <p className="text-sm font-medium">
@@ -883,7 +880,7 @@ export function PropFirmTracker() {
                                     : ""}
                                 </p>
                               </div>
-                              <span className="rounded-md border px-2 py-1 text-xs">
+                              <span className="rounded-md inset-outline px-2 py-1 text-xs">
                                 {a.archived ? "Archived · " : ""}
                                 {label(a.status)}
                               </span>
@@ -980,7 +977,7 @@ export function PropFirmTracker() {
                               </p>
                             </div>
                             <span
-                              className={`rounded-md border px-2 py-1 text-xs ${row.overdue ? "border-destructive text-destructive" : ""}`}
+                              className={`rounded-md px-2 py-1 text-xs ${row.overdue ? "inset-outline-destructive text-destructive" : "inset-outline"}`}
                             >
                               {row.overdue
                                 ? "Overdue · "
@@ -1028,7 +1025,7 @@ export function PropFirmTracker() {
                               {(receiptsById.get(row.entry.id) ?? []).map((r) => (
                                 <div
                                   key={r.id}
-                                  className="flex flex-wrap items-center justify-between gap-2 rounded border p-2 text-xs"
+                                  className="flex flex-wrap items-center justify-between gap-2 rounded inset-outline p-2 text-xs"
                                 >
                                   <span>
                                     {r.occurredOn} · {label(r.kind)} ·{" "}
@@ -1087,7 +1084,7 @@ export function PropFirmTracker() {
                           {slice(entries).map((entry) => (
                             <tr
                               key={entry.id}
-                              className={`border-b last:border-0 ${entry.voided ? "opacity-60" : ""}`}
+                              className={`inset-divider-b last:border-0 ${entry.voided ? "opacity-60" : ""}`}
                             >
                               <td className="py-3 pr-3">{entry.occurredOn}</td>
                               <td className="pr-3">
@@ -1148,7 +1145,7 @@ export function PropFirmTracker() {
                 )}
               </div>
             )}
-            <details className="rounded-xl border p-4 text-xs text-muted-foreground">
+            <details className="rounded-xl inset-outline p-4 text-xs text-muted-foreground">
               <summary className="cursor-pointer font-medium">How these numbers work</summary>
               <div className="mt-3 space-y-2">
                 <p>

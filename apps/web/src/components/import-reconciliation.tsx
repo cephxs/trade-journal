@@ -18,7 +18,7 @@ export function ImportReconciliation({
   busy: boolean;
 }) {
   return (
-    <div className="space-y-3 border-t pt-3">
+    <div className="space-y-3 inset-divider-t pt-3">
       <p className="text-sm font-medium">Review NinjaTrader import</p>
       <p className="text-xs text-muted-foreground">
         Keep each source account separate inside your selected journal account. Review the result

@@ -166,9 +166,61 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Hairline top sheen that lifts cards off a near-black canvas. */
+/* Rings are inset box-shadows, never borders. A border adds to the box, so a
+   content-sized container shifts by a pixel on every stroke and every state
+   swap reflows. An inset shadow costs no layout. Tiers follow fstarlabs: 6%
+   for large surfaces (a ring that big reads as a drawn box at 10%), 10% as
+   the default edge, 20% as the hover tier. box-shadow does not compose across
+   classes, so a surface that also needs an elevation takes the one utility
+   that carries both (floating) or folds the ring into its own shadow (the
+   card sheen, the menu surface, the hover card below).
+
+   Exempt, by one question: is the box pinned by something other than its own
+   content? Inputs at h-9, table rows and cells, an element positioned by inset.
+   Those keep a plain border. A dashed edge has no shadow form and stays too. */
+@utility inset-outline-subtle {
+  box-shadow: inset 0 0 0 var(--inset-ring-w, 1.25px)
+    color-mix(in oklab, var(--color-foreground) 6%, transparent);
+}
+@utility inset-outline {
+  box-shadow: inset 0 0 0 var(--inset-ring-w, 1.25px)
+    color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+@utility inset-outline-strong {
+  box-shadow: inset 0 0 0 var(--inset-ring-w, 1.25px)
+    color-mix(in oklab, var(--color-foreground) 20%, transparent);
+}
+/* A ring that names a state. 45%, not 20%: a hue at 20% over near-black reads
+   as grey, and the point of the tier is that the ring says "destructive". */
+@utility inset-outline-destructive {
+  box-shadow: inset 0 0 0 var(--inset-ring-w, 1.25px)
+    color-mix(in oklab, var(--color-destructive) 45%, transparent);
+}
+/* A panel that leaves the page plane: dialogs, popovers, the error toast. */
+@utility inset-outline-floating {
+  box-shadow:
+    inset 0 0 0 var(--inset-ring-w, 1.25px)
+      color-mix(in oklab, var(--color-foreground) 10%, transparent),
+    0 24px 60px -30px rgb(0 0 0 / 0.5);
+}
+/* Single-edge hairlines, the divider counterpart: a border-t on a flex or grid
+   container shifts its children by a pixel, an inset shadow does not. */
+@utility inset-divider-t {
+  box-shadow: inset 0 1px 0 0 color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+@utility inset-divider-b {
+  box-shadow: inset 0 -1px 0 0 color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+@utility inset-divider-r {
+  box-shadow: inset -1px 0 0 0 color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+
+/* The card surface: the 6% ring plus a hairline top sheen that lifts it off a
+   near-black canvas. One declaration, so Card never races a ring utility. */
 .card-sheen {
   box-shadow:
+    inset 0 0 0 var(--inset-ring-w, 1.25px)
+      color-mix(in oklab, var(--color-foreground) 6%, transparent),
     inset 0 1px 0 rgb(255 255 255 / 0.04),
     0 1px 2px rgb(0 0 0 / 0.25);
 }
@@ -182,6 +234,8 @@
 }
 .journal-hover-card {
   box-shadow:
+    inset 0 0 0 var(--inset-ring-w, 1.25px)
+      color-mix(in oklab, var(--color-foreground) 10%, transparent),
     0 12px 32px rgb(0 0 0 / 0.18),
     0 2px 8px rgb(0 0 0 / 0.1);
   transform-origin: var(--radix-tooltip-content-transform-origin);
@@ -507,7 +561,7 @@ body.dashboard-is-dragging .journal-hover-card {
   flex-shrink: 0;
   gap: 6px;
   padding: 24px 24px 20px;
-  border-bottom: 1px solid var(--border);
+  box-shadow: inset 0 -1px 0 0 var(--border);
 }
 .journal-filter-description {
   max-width: 66ch;
@@ -526,7 +580,7 @@ body.dashboard-is-dragging .journal-hover-card {
 .journal-filter-footer {
   flex-shrink: 0;
   padding: 16px 24px;
-  border-top: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 0 var(--border);
   background: color-mix(in srgb, var(--muted) 35%, var(--card));
 }
 .journal-filter-footer button {
@@ -590,7 +644,7 @@ body.dashboard-is-dragging .journal-hover-card {
   background: color-mix(in srgb, var(--brand) 10%, transparent);
 }
 .journal-filter-advanced {
-  border: 1px solid var(--border);
+  box-shadow: inset 0 0 0 var(--inset-ring-w, 1.25px) var(--border);
   border-radius: var(--radius-md);
 }
 .journal-filter-advanced summary {
@@ -794,7 +848,7 @@ body.dashboard-is-dragging .journal-hover-card {
   gap: 8px;
   margin: 8px 12px 0;
   padding: 13px 0;
-  border-top: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 0 var(--border);
 }
 
 /* The compact calendar keeps all seven days visible; weekly totals get their own row. */
@@ -881,8 +935,9 @@ body.dashboard-is-dragging .journal-hover-card {
 
 /* One quiet surface for date, selection, and action menus. */
 .journal-menu-surface {
-  border-color: color-mix(in srgb, var(--foreground) 7%, var(--border));
   box-shadow:
+    inset 0 0 0 var(--inset-ring-w, 1.25px)
+      color-mix(in oklab, var(--color-foreground) 10%, transparent),
     0 12px 36px rgb(0 0 0 / 0.18),
     0 3px 8px rgb(0 0 0 / 0.08),
     inset 0 1px 0 color-mix(in srgb, var(--foreground) 4%, transparent);
@@ -987,7 +1042,7 @@ body.dashboard-is-dragging .journal-hover-card {
     display: none;
   }
   .notebook-list {
-    border-right: 0;
+    box-shadow: none;
   }
 }
 @media (min-width: 768px) {
@@ -1044,11 +1099,12 @@ body.dashboard-is-dragging .journal-hover-card {
   width: min(344px, calc(100vw - 24px));
   max-height: var(--radix-popover-content-available-height);
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--foreground) 6%, var(--border));
   border-radius: var(--radius-2xl);
   background: var(--popover);
   color: var(--popover-foreground);
   box-shadow:
+    inset 0 0 0 var(--inset-ring-w, 1.25px)
+      color-mix(in oklab, var(--color-foreground) 10%, transparent),
     0 18px 60px rgb(0 0 0 / 0.24),
     0 4px 12px rgb(0 0 0 / 0.1),
     inset 0 1px 0 color-mix(in srgb, var(--foreground) 4%, transparent);
@@ -1247,7 +1303,7 @@ body.dashboard-is-dragging .journal-hover-card {
   justify-content: space-between;
   margin: 6px 10px 0;
   padding: 8px 0;
-  border-top: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 0 var(--border);
 }
 .dashboard-customize-footer button {
   display: inline-flex;
@@ -1422,18 +1478,18 @@ body.dashboard-is-dragging * {
   padding-left: 1.5em;
 }
 .journal-markdown a {
-  color: var(--color-brand, #60dcca);
+  color: var(--color-brand);
   text-decoration: underline;
 }
 .journal-markdown blockquote {
-  border-left: 3px solid #657386;
+  border-left: 3px solid color-mix(in oklab, var(--color-foreground) 20%, transparent);
   padding-left: 1em;
-  color: #9eabc0;
+  color: var(--muted-foreground);
 }
 .journal-markdown pre {
   white-space: pre-wrap;
   padding: 0.75em;
-  background: #121a27;
+  background: var(--muted);
   border-radius: var(--radius-sm);
 }
 .journal-markdown table {
@@ -1442,7 +1498,7 @@ body.dashboard-is-dragging * {
 }
 .journal-markdown td,
 .journal-markdown th {
-  border: 1px solid #344155;
+  border: 1px solid var(--border);
   padding: 0.4em;
 }
 .journal-markdown img {

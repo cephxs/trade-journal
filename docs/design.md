@@ -69,3 +69,23 @@ One seed, `--radius: 0.625rem`, and the fstarlabs ladder off it: `sm` 0.6, `md` 
 Nesting stays concentric at the house paddings: a `rounded-lg` list minus its `p-1` is
 6, which is `rounded-sm`. No stylesheet or component states a corner in px; the pill
 switch is the one exception, and `tests/radii.test.ts` holds it there.
+
+## Rings
+
+Borders are inset box-shadows, never strokes, on anything sized by its own content.
+A border adds to the box, so every stroke is a pixel of layout shift and every state
+swap reflows; an inset shadow costs nothing. The tiers are fstarlabs's:
+`inset-outline-subtle` (6%, large surfaces and the card), `inset-outline` (10%, the
+default edge), `inset-outline-strong` (20%, hover and emphasis), `inset-outline-destructive`
+(45% of the destructive red), and `inset-outline-floating`, which carries the 10% ring
+and the elevation of a panel that leaves the page plane in one declaration. Dividers
+are `inset-divider-t`, `-b`, `-r`.
+
+`box-shadow` does not compose across classes, so a surface with its own shadow folds
+the ring into it: the card sheen, the menu surface, the hover card, the customize panel.
+Never put `border` and a `shadow-*` on one element; `tests/rings.test.ts` fails on it.
+
+Exempt, by one question: is the box pinned by something other than its own content?
+Inputs and selects at `h-9`, table rows and cells, the chart hosts at a fixed height,
+the navigation drawer positioned by `inset`. Those keep a plain `border`. A dashed
+edge has no shadow form and stays a border too.

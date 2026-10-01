@@ -67,7 +67,7 @@ export function MarketCsvSettings({ onChange }: { onChange: () => void }) {
     }
   };
   return (
-    <div className="space-y-3 rounded-lg border p-3" id="market-csv">
+    <div className="space-y-3 rounded-lg inset-outline p-3" id="market-csv">
       <h3 className="text-sm font-medium">Market data CSV</h3>
       <p className="text-xs text-muted-foreground">
         Upload one instrument and candle resolution per file, up to 5 MB / 50,000 rows. Required
@@ -187,7 +187,7 @@ export function MarketCsvSettings({ onChange }: { onChange: () => void }) {
         Validate & preview candles
       </Button>
       {preview && (
-        <div className="space-y-2 rounded-lg border p-3">
+        <div className="space-y-2 rounded-lg inset-outline p-3">
           <p className="text-xs">
             {preview.count.toLocaleString()} candles · {preview.from} to {preview.to}
           </p>
@@ -235,7 +235,7 @@ export function MarketCsvSettings({ onChange }: { onChange: () => void }) {
       {data?.datasets.map((dataset) => (
         <div
           key={dataset.id}
-          className="flex flex-wrap items-center justify-between gap-2 rounded-lg border p-3"
+          className="flex flex-wrap items-center justify-between gap-2 rounded-lg inset-outline p-3"
         >
           <div className="min-w-0 text-xs">
             <p className="break-all font-medium">

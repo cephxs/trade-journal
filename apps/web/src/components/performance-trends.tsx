@@ -50,7 +50,7 @@ export function PerformanceTrendsReport({ query }: { query: string }) {
     );
   if (error || !data)
     return (
-      <div role="alert" className="rounded-xl border p-5">
+      <div role="alert" className="rounded-xl inset-outline p-5">
         <p className="text-sm text-destructive">{error ?? "Unable to load performance trends."}</p>
         <Button onClick={refresh} variant="outline" size="sm" className="mt-3">
           Try again
@@ -92,7 +92,7 @@ export function PerformanceTrendsReport({ query }: { query: string }) {
           {!monetary && (
             <p
               role="note"
-              className="rounded-xl border bg-muted/30 p-4 text-sm text-muted-foreground"
+              className="rounded-xl inset-outline bg-muted/30 p-4 text-sm text-muted-foreground"
             >
               These trades use different currencies ({currencies.join(", ")}). Win rate is
               available; select accounts with one currency to compare P&L and largest trades. No
@@ -181,7 +181,7 @@ export function PerformanceTrendsReport({ query }: { query: string }) {
                     ["Largest loser", trends.largestLoss],
                   ] as const
                 ).map(([label, trade]) => (
-                  <div key={label} className="min-w-0 rounded-lg border p-4">
+                  <div key={label} className="min-w-0 rounded-lg inset-outline p-4">
                     <h3 className="text-xs text-muted-foreground">{label}</h3>
                     {trade ? (
                       <>
@@ -213,7 +213,7 @@ export function PerformanceTrendsReport({ query }: { query: string }) {
           )}
           {latest && (
             <details
-              className="rounded-xl border bg-card"
+              className="rounded-xl inset-outline bg-card"
               onToggle={(event) => setTableOpen(event.currentTarget.open)}
             >
               <summary className="cursor-pointer rounded-xl px-4 py-3 text-sm font-medium">

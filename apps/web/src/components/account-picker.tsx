@@ -119,7 +119,7 @@ export function AccountPicker({
       )}
       {creating && (
         <form
-          className="w-full space-y-3 rounded-lg border p-4"
+          className="w-full space-y-3 rounded-lg inset-outline p-4"
           onSubmit={(event) => {
             event.preventDefault();
             if (!saving) void create();

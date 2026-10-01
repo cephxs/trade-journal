@@ -654,7 +654,7 @@ function Detail({ modal, data }: Props & { modal: Extract<PropModal, { kind: "de
         <summary className="cursor-pointer text-sm">Edit history · latest 100 changes</summary>
         <div className="mt-3 space-y-3">
           {history?.history.map((item) => (
-            <details key={item.id} className="rounded-md border p-2 text-xs">
+            <details key={item.id} className="rounded-md inset-outline p-2 text-xs">
               <summary className="cursor-pointer">
                 {item.createdAt} ·{" "}
                 {item.reason.startsWith("CSV import") ? "CSV import" : item.reason}
@@ -756,7 +756,7 @@ function ImportForm({ close, refresh }: Props) {
           </p>
           <div className="space-y-2">
             {result.sample.map((row) => (
-              <p key={row.id} className="rounded border p-2 text-xs">
+              <p key={row.id} className="rounded inset-outline p-2 text-xs">
                 {row.date} · {row.firm} · {row.kind} · {row.amount} {row.currency}
               </p>
             ))}

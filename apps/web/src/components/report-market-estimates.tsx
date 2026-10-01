@@ -92,7 +92,7 @@ export function ReportMarketEstimates({
     }
   };
   return (
-    <div className="space-y-3 rounded-xl border bg-card p-4">
+    <div className="space-y-3 rounded-xl inset-outline bg-card p-4">
       <div>
         <h3 className="text-sm font-medium">MAE & MFE estimates</h3>
         <p className="mt-1 text-xs text-muted-foreground">

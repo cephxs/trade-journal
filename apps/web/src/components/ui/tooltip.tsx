@@ -20,7 +20,7 @@ function TooltipContent({
         sideOffset={sideOffset}
         collisionPadding={12}
         className={cn(
-          "journal-hover-card z-[80] max-w-[min(19rem,calc(100vw-24px))] rounded-xl border bg-popover p-3.5 text-[13px] leading-relaxed text-popover-foreground",
+          "journal-hover-card z-[80] max-w-[min(19rem,calc(100vw-24px))] rounded-xl bg-popover p-3.5 text-[13px] leading-relaxed text-popover-foreground",
           className,
         )}
         {...props}

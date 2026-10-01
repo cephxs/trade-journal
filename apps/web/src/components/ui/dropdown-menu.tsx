@@ -13,7 +13,7 @@ export function DropdownMenuContent({ className, ...props }: ComponentProps<type
         sideOffset={6}
         collisionPadding={12}
         className={cn(
-          "journal-popup journal-menu-surface z-50 min-w-48 max-w-[calc(100vw-24px)] max-h-[var(--radix-dropdown-menu-content-available-height)] overflow-y-auto rounded-xl border bg-popover p-1.5 text-popover-foreground outline-none",
+          "journal-popup journal-menu-surface z-50 min-w-48 max-w-[calc(100vw-24px)] max-h-[var(--radix-dropdown-menu-content-available-height)] overflow-y-auto rounded-xl bg-popover p-1.5 text-popover-foreground outline-none",
           className,
         )}
         {...props}

@@ -464,7 +464,7 @@ function FileImport() {
             </div>
           )}
           {preview?.needsMapping && preview.headers && (
-            <div className="space-y-2 rounded-md border p-3">
+            <div className="space-y-2 rounded-md inset-outline p-3">
               <p className="text-sm">
                 Format not recognized — map your columns (nothing is guessed silently):
               </p>
@@ -514,7 +514,7 @@ function FileImport() {
           )}
 
           {preview && !preview.needsMapping && preview.totals && (
-            <div className="space-y-2 rounded-md border p-3">
+            <div className="space-y-2 rounded-md inset-outline p-3">
               <div className="flex flex-wrap items-center gap-2 text-sm">
                 <Badge variant="secondary">{preview.detected}</Badge>
                 <span>{preview.totals.executions} executions</span>
@@ -535,7 +535,7 @@ function FileImport() {
                 Statement timezone: {preview.timeZone}. Preview times: {displayTimeZone}.
               </p>
               {!!preview.executions?.length && (
-                <div className="space-y-1 border-t pt-2 text-xs">
+                <div className="space-y-1 inset-divider-t pt-2 text-xs">
                   <div
                     className={
                       preview.aiPreviewToken ? "max-h-80 space-y-2 overflow-auto" : "space-y-1"

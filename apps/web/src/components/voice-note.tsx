@@ -98,7 +98,7 @@ export function VoiceNote({
                 onPrepare();
               }
             }}
-            className="journal-popup z-50 max-h-[var(--radix-popover-content-available-height)] w-80 max-w-[calc(100vw-24px)] space-y-3 overflow-y-auto rounded-xl border bg-card p-4 text-sm shadow-lg"
+            className="journal-popup z-50 max-h-[var(--radix-popover-content-available-height)] w-80 max-w-[calc(100vw-24px)] space-y-3 overflow-y-auto rounded-xl bg-card p-4 text-sm inset-outline-floating"
           >
             <p role="alert">{error}</p>
             <p className="text-muted-foreground">

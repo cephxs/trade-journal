@@ -57,7 +57,7 @@ export function TradeChart(props: {
       cumNetPnl: fill.price / props.trade.avgEntry - 1,
     }));
   return (
-    <figure className="rounded-lg border bg-card p-4">
+    <figure className="rounded-lg inset-outline bg-card p-4">
       <p className="mb-2 text-sm font-medium">Execution price change (%)</p>
       {props.trade.avgEntry !== 0 && data.length ? (
         <EquityArea

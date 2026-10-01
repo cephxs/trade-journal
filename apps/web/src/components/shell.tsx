@@ -164,7 +164,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           active={href === "/" ? pathname === "/" : pathname.startsWith(href)}
         />
       ))}
-      <div className="!my-3 border-t" />
+      <div className="!my-3 inset-divider-t" />
       {NAV_SETUP.map(({ href, label, icon }) => (
         <NavLink
           key={href}
@@ -178,7 +178,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     </nav>
   );
   const footer = (
-    <div className="journal-sidebar-footer space-y-1 border-t p-3 text-xs text-muted-foreground">
+    <div className="journal-sidebar-footer space-y-1 inset-divider-t p-3 text-xs text-muted-foreground">
       <div>
         Open source ·{" "}
         <a
@@ -195,7 +195,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
   );
   return (
     <div className="journal-shell min-h-dvh lg:flex">
-      <header className="journal-mobile-header sticky top-0 z-30 flex h-14 items-center gap-2 border-b bg-background/95 px-3 backdrop-blur lg:hidden">
+      <header className="journal-mobile-header sticky top-0 z-30 flex h-14 items-center gap-2 inset-divider-b bg-background/95 px-3 backdrop-blur lg:hidden">
         <DialogPrimitive.Root open={menuOpen} onOpenChange={setMenuOpen}>
           <DialogPrimitive.Trigger asChild>
             <Button
@@ -213,7 +213,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               className="journal-nav-drawer fixed inset-y-0 left-0 z-50 flex w-[min(288px,calc(100vw-40px))] flex-col border-r bg-card shadow-2xl"
               aria-describedby={undefined}
             >
-              <div className="flex h-14 shrink-0 items-center gap-2.5 border-b px-4">
+              <div className="flex h-14 shrink-0 items-center gap-2.5 inset-divider-b px-4">
                 <LuxAlgoMark className="h-[18px] w-5" />
                 <DialogPrimitive.Title className="type-nav">Trade Journal</DialogPrimitive.Title>
                 <DialogPrimitive.Close asChild>
@@ -228,7 +228,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                 </DialogPrimitive.Close>
               </div>
               {navigation()}
-              <div className="border-t p-3">
+              <div className="inset-divider-t p-3">
                 <PrivacyToggle />
               </div>
               {footer}
@@ -243,11 +243,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <ThemeToggle iconOnly />
       </header>
       <aside
-        className="journal-desktop-sidebar sticky top-0 hidden h-dvh shrink-0 flex-col border-r bg-card/50 lg:flex"
+        className="journal-desktop-sidebar sticky top-0 hidden h-dvh shrink-0 flex-col inset-divider-r bg-card/50 lg:flex"
         data-collapsed={sidebarCollapsed}
         data-ready={sidebarReady}
       >
-        <div className="journal-sidebar-header relative flex h-14 shrink-0 items-center border-b">
+        <div className="journal-sidebar-header relative flex h-14 shrink-0 items-center inset-divider-b">
           <Link href="/" className="journal-sidebar-home flex h-full min-w-0 items-center gap-2.5">
             <LuxAlgoMark className="h-[18px] w-5 shrink-0" />
             <span className="journal-sidebar-brand-label type-nav">Trade Journal</span>
@@ -271,7 +271,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </Button>
         </div>
         {navigation(sidebarCollapsed)}
-        <div className="journal-sidebar-privacy border-t p-3">
+        <div className="journal-sidebar-privacy inset-divider-t p-3">
           <div className="w-full space-y-1">
             <ThemeToggle iconOnly={sidebarCollapsed} />
             <PrivacyToggle iconOnly={sidebarCollapsed} />

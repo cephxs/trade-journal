@@ -102,7 +102,7 @@ export function JournalDefaultSettings() {
                 feeRules: draft.feeRules.map((old, j) => (j === i ? (next as FeeRule) : old)),
               });
             return (
-              <div key={r.id} className="space-y-2 rounded-md border p-3">
+              <div key={r.id} className="space-y-2 rounded-md inset-outline p-3">
                 <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {matchFields(r, update)}
                   <Field label="Fee amount">
@@ -175,7 +175,7 @@ export function JournalDefaultSettings() {
                 riskRules: draft.riskRules.map((old, j) => (j === i ? (next as RiskRule) : old)),
               });
             return (
-              <div key={r.id} className="space-y-2 rounded-md border p-3">
+              <div key={r.id} className="space-y-2 rounded-md inset-outline p-3">
                 <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {matchFields(r, update)}
                   <Field label="Stop distance">

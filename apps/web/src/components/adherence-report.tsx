@@ -34,7 +34,7 @@ export function AdherenceReport({ bookId }: { bookId: string }) {
     );
   if (!b) return null;
   return (
-    <div className="space-y-3 border-t pt-3">
+    <div className="space-y-3 inset-divider-t pt-3">
       <div className="flex items-center justify-between">
         <span className="text-xs text-muted-foreground">Rule adherence</span>
         <strong className="text-lg">{pct(b.rate)}</strong>
@@ -74,7 +74,7 @@ export function AdherenceReport({ bookId }: { bookId: string }) {
         <summary className="cursor-pointer text-muted-foreground">Performance by rule</summary>
         <div className="mt-2 space-y-3">
           {b.rules.map((r) => (
-            <div key={r.rule} className="border-t pt-2">
+            <div key={r.rule} className="inset-divider-t pt-2">
               <p className="font-medium">{r.rule}</p>
               <p className="text-muted-foreground">
                 {pct(r.rate)} followed · {r.evaluated} assessments

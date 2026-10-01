@@ -296,7 +296,7 @@ export function TradeMarketData({
       ) : (
         <>
           <div
-            className="grid gap-3 rounded-lg border bg-card p-3 sm:grid-cols-3"
+            className="grid gap-3 rounded-lg inset-outline bg-card p-3 sm:grid-cols-3"
             aria-label="Market data feature status"
           >
             <div>
@@ -401,14 +401,17 @@ export function HistoricalReplay({
         ) : (
           <>
             {history.estimate.priceBasisMismatch && (
-              <p role="status" className="rounded-md border p-3 text-sm text-muted-foreground">
+              <p
+                role="status"
+                className="rounded-md inset-outline p-3 text-sm text-muted-foreground"
+              >
                 The market candles and recorded fill prices do not match. Replay shows market
                 prices; fill labels and MAE/MFE estimates are withheld. See the data limits below.
               </p>
             )}
             <ReplayChart history={history} nextFrame={frame} />
             <div
-              className="flex flex-wrap items-center gap-2 rounded-lg border bg-muted/30 p-2"
+              className="flex flex-wrap items-center gap-2 rounded-lg inset-outline bg-muted/30 p-2"
               role="group"
               aria-label="Candle replay controls"
             >
@@ -503,7 +506,7 @@ export function HistoricalReplay({
             </p>
           </>
         )}
-        <div className="grid grid-cols-2 gap-3 rounded-lg border p-3">
+        <div className="grid grid-cols-2 gap-3 rounded-lg inset-outline p-3">
           <div>
             <p className="text-xs text-muted-foreground">Estimated MAE · adverse</p>
             <p className="font-medium">

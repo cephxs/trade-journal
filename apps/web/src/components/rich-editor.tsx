@@ -246,7 +246,7 @@ export function RichEditor({
         )}
       </div>
       {linkOpen && !preview && (
-        <div className="space-y-2 rounded-md border p-2">
+        <div className="space-y-2 rounded-md inset-outline p-2">
           <input
             aria-label="Find trade by symbol, date or account"
             placeholder="Search symbol, date or account"
@@ -293,7 +293,7 @@ export function RichEditor({
         </div>
       )}
       {preview ? (
-        <div className="min-h-40 rounded-md border p-3">
+        <div className="min-h-40 rounded-md inset-outline p-3">
           <Markdown>{value || "Nothing written yet."}</Markdown>
         </div>
       ) : (
