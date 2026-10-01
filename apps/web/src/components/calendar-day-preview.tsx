@@ -32,7 +32,7 @@ export function CalendarDayPreview({
       <div className="flex items-center justify-between gap-3">
         <span className="text-xs">Running P&L</span>
         {monetary ? (
-          <Pnl value={total} currency={currency} className="text-sm font-semibold" />
+          <Pnl value={total} currency={currency} className="text-sm font-medium" />
         ) : (
           <span className="text-xs">Multiple currencies</span>
         )}

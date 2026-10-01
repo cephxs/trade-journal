@@ -169,7 +169,7 @@ function TradeView({ tradeKey }: { tradeKey: string }) {
             <CardContent className="flex flex-wrap items-center gap-x-8 gap-y-3 py-4">
               <div>
                 <div className="text-xs text-muted-foreground">Net P&L</div>
-                <Pnl value={trade.netPnl} className="text-2xl font-semibold" />
+                <Pnl value={trade.netPnl} className="type-stat-sm" />
               </div>
               <Badge
                 variant={

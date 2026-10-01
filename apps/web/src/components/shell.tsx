@@ -215,9 +215,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             >
               <div className="flex h-14 shrink-0 items-center gap-2.5 border-b px-4">
                 <LuxAlgoMark className="h-[18px] w-5" />
-                <DialogPrimitive.Title className="text-sm font-semibold">
-                  Trade Journal
-                </DialogPrimitive.Title>
+                <DialogPrimitive.Title className="type-nav">Trade Journal</DialogPrimitive.Title>
                 <DialogPrimitive.Close asChild>
                   <Button
                     variant="ghost"
@@ -237,10 +235,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             </DialogPrimitive.Content>
           </DialogPrimitive.Portal>
         </DialogPrimitive.Root>
-        <Link
-          href="/"
-          className="mr-auto flex min-w-0 items-center gap-2 text-sm font-semibold tracking-tight"
-        >
+        <Link href="/" className="mr-auto flex min-w-0 items-center gap-2 type-nav">
           <LuxAlgoMark className="hidden h-4 w-[18px] shrink-0 min-[380px]:block" />
           <span className="truncate">Trade Journal</span>
         </Link>
@@ -255,9 +250,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <div className="journal-sidebar-header relative flex h-14 shrink-0 items-center border-b">
           <Link href="/" className="journal-sidebar-home flex h-full min-w-0 items-center gap-2.5">
             <LuxAlgoMark className="h-[18px] w-5 shrink-0" />
-            <span className="journal-sidebar-brand-label text-sm font-semibold tracking-tight">
-              Trade Journal
-            </span>
+            <span className="journal-sidebar-brand-label type-nav">Trade Journal</span>
           </Link>
           <Button
             type="button"

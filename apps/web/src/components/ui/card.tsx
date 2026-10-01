@@ -26,10 +26,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
 function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn(
-        "min-w-0 break-words text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground",
-        className,
-      )}
+      className={cn("type-h5 min-w-0 break-words text-muted-foreground", className)}
       {...props}
     />
   );

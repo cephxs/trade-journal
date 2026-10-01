@@ -1,0 +1,77 @@
+/* ---------------------------------------------------------------------------
+   Type roles — the fstarlabs type system, cut for a dashboard.
+   Source: fstarlabsBeUI-new/src/app/typography.css (Figma fstarlabs-landing).
+   Keep this file next to globals.css: Turbopack's dev-mode Tailwind transform
+   cannot resolve an `@import` that leaves the CSS entry's directory.
+
+   Three rules carry over unchanged:
+   1. Every headline role tracks at a flat -0.06em. Prose and nav carry none.
+   2. Headlines are 500, never 600 or 700. Tight tracking plus restrained
+      weight is the voice; bold headings break it. tests/type.test.ts gates it.
+   3. Leading inverts against size: titles sit at 0.95, body opens to 1.36+.
+
+   Two roles are dashboard additions fstarlabs never needed, both numbers:
+   `type-stat` and `type-stat-sm`. They carry tabular figures so a column of
+   values lines up. Body copy keeps Tailwind's text-sm / text-xs; fstarlabs
+   P2 (14 / 1.36) and P3 (12 / 1.36) are within a pixel of them.
+--------------------------------------------------------------------------- */
+
+/* stat — the hero number on a KPI card. 30px / 0.95 / -0.06em / 500, tabular. */
+@utility type-stat {
+  font-family: var(--font-heading);
+  font-size: 1.875rem; /* 30 */
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* stat small — a secondary number: a metric in a row of four, a trade's P&L.
+   20px / 1.2 / -0.06em / 500, tabular. */
+@utility type-stat-sm {
+  font-family: var(--font-heading);
+  font-size: 1.25rem; /* 20 */
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* h3-card — section and dialog title. fstarlabs: 20px / 0.95 / -0.06em / 500. */
+@utility type-h3-card {
+  font-family: var(--font-heading);
+  font-size: 1.25rem; /* 20 */
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+/* h3-sm — panel and page title. fstarlabs: 16px / 0.95 / -0.06em / 500. */
+@utility type-h3-sm {
+  font-family: var(--font-heading);
+  font-size: 1rem; /* 16 */
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+/* h5 — the caps kicker over a card. fstarlabs: 10px mono / 1.2 / -0.06em / 400.
+   Apple platforms take the system face through the two leading names, as the
+   sans stack does; everywhere else falls through to Geist Mono. */
+@utility type-h5 {
+  font-family: -apple-system, BlinkMacSystemFont, var(--font-mono);
+  font-size: 0.625rem; /* 10 */
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+/* nav — brand label, sidebar title, login heading. fstarlabs: 14px / 1.5 / 500. */
+@utility type-nav {
+  font-family: var(--font-sans);
+  font-size: 0.875rem; /* 14 */
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}

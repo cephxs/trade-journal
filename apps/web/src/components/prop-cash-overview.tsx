@@ -33,9 +33,7 @@ export function PropCashSummary({
             <span className="h-2 w-2 rounded-full bg-[var(--loss)]" />
             Money spent
           </p>
-          <p className="mt-3 break-words text-3xl font-semibold tracking-tight tabular-nums">
-            {money(summary.spent)}
-          </p>
+          <p className="type-stat mt-3 break-words">{money(summary.spent)}</p>
           <p className="mt-3 text-xs text-muted-foreground">
             All fees, subscriptions and other costs
           </p>
@@ -55,9 +53,7 @@ export function PropCashSummary({
             <span className="h-2 w-2 rounded-full bg-[var(--brand)]" />
             Payouts received
           </p>
-          <p className="mt-3 break-words text-3xl font-semibold tracking-tight tabular-nums">
-            {money(summary.received)}
-          </p>
+          <p className="type-stat mt-3 break-words">{money(summary.received)}</p>
           <p className="mt-3 text-xs text-muted-foreground">Money received, after any reversals</p>
           <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">
             Pending requests are tracked separately below.
@@ -68,7 +64,7 @@ export function PropCashSummary({
         <CardContent className="p-5 sm:p-6">
           <p className="text-sm font-medium">Net after costs</p>
           <p
-            className="mt-3 break-words text-3xl font-semibold tracking-tight tabular-nums"
+            className="type-stat mt-3 break-words"
             style={{
               color:
                 privacy || !currency
@@ -119,7 +115,7 @@ export function PropCashComparison({
       <CardContent className="p-5 sm:p-6">
         <div className="mb-6 flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h3 className="text-base font-semibold">Spending vs payouts</h3>
+            <h3 className="type-h3-sm">Spending vs payouts</h3>
             <p className="mt-1 text-xs text-muted-foreground">
               Monthly cash flow{currency ? ` · ${currency}` : ""}
             </p>

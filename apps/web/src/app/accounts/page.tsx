@@ -5,7 +5,7 @@ import { Archive, ArchiveRestore, RefreshCw, Trash2 } from "lucide-react";
 import { FilterBar } from "@/components/filter-bar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -80,7 +80,7 @@ function Accounts() {
         {data?.accounts.map((account) => (
           <Card key={account.id} className={account.archivedAt ? "opacity-60" : undefined}>
             <CardHeader className="flex-row flex-wrap items-center justify-between gap-2">
-              <CardTitle className="min-w-0 flex-1 text-base font-semibold normal-case tracking-normal text-foreground">
+              <div className="type-h3-sm min-w-0 flex-1 text-foreground">
                 <span className="block break-words">{account.name}</span>
                 <Badge variant="secondary" className="mt-1.5 mr-2">
                   {account.kind}
@@ -90,7 +90,7 @@ function Accounts() {
                     {account.broker}
                   </span>
                 )}
-              </CardTitle>
+              </div>
               <div className="ml-auto flex shrink-0 items-center gap-1">
                 {account.kind === "sync" && (
                   <Button

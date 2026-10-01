@@ -186,7 +186,7 @@ function DashboardContent({
                   hint="Realized profit and loss net of fees, over the selected range."
                 />
                 <CardContent>
-                  <Pnl value={m.netPnl} className="text-3xl font-semibold tracking-tight" />
+                  <Pnl value={m.netPnl} className="type-stat" />
                   {weekDelta !== null && (
                     <div
                       className={cn(
@@ -245,7 +245,7 @@ function DashboardContent({
                   hint="Gross profit ÷ gross loss. Above 1 means the wins outweigh the losses."
                 />
                 <CardContent>
-                  <div className="text-3xl font-semibold tracking-tight tnum">
+                  <div className="type-stat">
                     {m.profitFactorIsInfinite
                       ? "∞"
                       : m.profitFactor === null
@@ -291,7 +291,7 @@ function DashboardContent({
                   hint="Average winning trade ÷ average losing trade. The bar shows the two to scale."
                 />
                 <CardContent>
-                  <div className="text-3xl font-semibold tracking-tight tnum">
+                  <div className="type-stat">
                     {m.avgWinLossRatio === null ? "–" : fmtNumber(m.avgWinLossRatio)}
                   </div>
                   {m.avgWin !== null && m.avgLoss !== null && m.avgWin + m.avgLoss > 0 && (
@@ -346,7 +346,7 @@ function DashboardContent({
                       recovery, and consistency. Requires at least five closed trades.
                     </HelpHint>
                   </div>
-                  <span className="text-2xl font-semibold tracking-tight tnum">
+                  <span className="type-stat-sm">
                     {edgeScore.score === null ? (
                       "–"
                     ) : (
@@ -545,7 +545,7 @@ function DashboardContent({
                   hint="Largest peak-to-trough drop of the cumulative P&L curve."
                 />
                 <CardContent>
-                  <div className="text-xl font-semibold tnum text-loss">
+                  <div className="type-stat-sm text-loss">
                     <MonetaryValue>{fmtMoney(-m.maxDrawdown)}</MonetaryValue>
                   </div>
                   <div className="mt-1 text-xs text-muted-foreground">
@@ -571,7 +571,7 @@ function DashboardContent({
                   hint="Current run of consecutive wins (W) or losses (L), with the best and worst runs."
                 />
                 <CardContent>
-                  <div className="text-xl font-semibold tnum">
+                  <div className="type-stat-sm">
                     {m.currentStreak > 0
                       ? `${m.currentStreak}W`
                       : m.currentStreak < 0
@@ -601,7 +601,7 @@ function DashboardContent({
                   {m.expectancy === null ? (
                     "–"
                   ) : (
-                    <Pnl value={m.expectancy} className="text-xl font-semibold" />
+                    <Pnl value={m.expectancy} className="type-stat-sm" />
                   )}
                   <div className="mt-1 text-xs text-muted-foreground">
                     {m.avgRealizedR !== null && m.tradesWithRisk > 0
@@ -625,7 +625,7 @@ function DashboardContent({
                   hint="Average time from first entry fill to final exit."
                 />
                 <CardContent>
-                  <div className="text-xl font-semibold tnum">{fmtDuration(m.avgDurationMs)}</div>
+                  <div className="type-stat-sm">{fmtDuration(m.avgDurationMs)}</div>
                   <div className="mt-1 text-xs text-muted-foreground">
                     winners vs losers in Reports
                   </div>
@@ -648,13 +648,13 @@ function DashboardContent({
                 <CardContent className="space-y-1">
                   {bestDay && (
                     <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                      <Pnl value={bestDay.netPnl} className="text-base font-semibold" />
+                      <Pnl value={bestDay.netPnl} className="font-medium" />
                       <span className="text-xs text-muted-foreground">{bestDay.date.slice(5)}</span>
                     </div>
                   )}
                   {worstDay && (
                     <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                      <Pnl value={worstDay.netPnl} className="text-base font-semibold" />
+                      <Pnl value={worstDay.netPnl} className="font-medium" />
                       <span className="text-xs text-muted-foreground">
                         {worstDay.date.slice(5)}
                       </span>
@@ -714,7 +714,7 @@ function StatHeader({
           <Icon className="h-3.5 w-3.5 text-muted-foreground/70" />
         </TooltipTrigger>
         <TooltipContent>
-          <div className="mb-1 font-semibold">{title}</div>
+          <div className="mb-1 font-medium">{title}</div>
           <div className="text-muted-foreground">{hint}</div>
         </TooltipContent>
       </Tooltip>
@@ -740,7 +740,7 @@ function EmptyState() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center gap-3 px-4 py-24 text-center">
-        <h2 className="text-xl font-semibold">Your journal is empty</h2>
+        <h2 className="type-h3-card">Your journal is empty</h2>
         <p className="max-w-md text-sm text-muted-foreground">
           Connect a broker for automatic sync, upload a statement from 10+ platforms (including your
           TradeZella export), or add trades manually.

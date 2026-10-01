@@ -75,7 +75,7 @@ export function CalendarPnl({
         <span>
           Month:{" "}
           {monetary ? (
-            <Pnl value={calendar.monthNetPnl} currency={currency} className="font-semibold" />
+            <Pnl value={calendar.monthNetPnl} currency={currency} className="font-medium" />
           ) : (
             <span className="text-muted-foreground">Multiple currencies</span>
           )}

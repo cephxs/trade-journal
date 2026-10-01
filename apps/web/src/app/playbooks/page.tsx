@@ -5,7 +5,7 @@ import { Plus, Trash2 } from "lucide-react";
 import { AdherenceReport } from "@/components/adherence-report";
 import { FilterBar } from "@/components/filter-bar";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -71,9 +71,7 @@ function Playbooks() {
         {data?.playbooks.map((playbook) => (
           <Card key={playbook.id}>
             <CardHeader className="flex-row flex-wrap items-center justify-between gap-2">
-              <CardTitle className="text-foreground text-base font-semibold">
-                {playbook.name}
-              </CardTitle>
+              <div className="type-h3-sm min-w-0 break-words text-foreground">{playbook.name}</div>
               <div className="ml-auto flex shrink-0 items-center gap-2">
                 <span className="text-xs text-muted-foreground">{playbook.tradeCount} trades</span>
                 <Button

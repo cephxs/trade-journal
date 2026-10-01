@@ -75,7 +75,7 @@ function Summary({ data }: { data: Analysis }) {
         ].map(([label, value]) => (
           <div key={label}>
             <p className="text-xs text-muted-foreground">{label}</p>
-            <p className="mt-1 break-words text-base font-semibold tabular-nums sm:text-lg">
+            <p className="type-stat-sm mt-1 break-words">
               {label === "Net P&L" ? <MonetaryValue>{value}</MonetaryValue> : value}
             </p>
           </div>
@@ -441,7 +441,7 @@ function Comparison({ initial }: { initial: AnalysisFilters }) {
               <div className="flex flex-wrap items-center gap-3">
                 <input
                   aria-label={`Group ${group.key.toUpperCase()} name`}
-                  className={`${fieldClass} min-w-32 flex-1 font-semibold`}
+                  className={`${fieldClass} min-w-32 flex-1 font-medium`}
                   value={group.name}
                   onChange={(e) => group.setName(e.target.value)}
                 />

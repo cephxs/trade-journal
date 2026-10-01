@@ -77,7 +77,7 @@ function JournalDay({ date }: { date: string }) {
               </CardHeader>
               <CardContent className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm sm:grid-cols-3 2xl:grid-cols-5">
                 <Stat label="Net P&L">
-                  <Pnl value={m.netPnl} className="font-semibold" />
+                  <Pnl value={m.netPnl} className="font-medium" />
                 </Stat>
                 <Stat label="Trades">{m.closedTrades}</Stat>
                 <Stat label="Winrate">{fmtPercent(m.winRate)}</Stat>
