@@ -4,94 +4,104 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Dark-first trading terminal. P&L green/red follows the trader convention and
- * is NEVER load-bearing: every value is signed text, bars anchor to zero,
- * win/loss ships as text chips, markers differ by shape — color only reinforces.
+ * Dark-first trading terminal in the fstarlabs palette: pure-grey surfaces
+ * (#111 page, #171717 card, #0a0a0a popover), #fafafa ink, cyan brand.
+ * Source: fstarlabsBeUI-new/src/app/globals.css. Light is the same roles on
+ * white; fstarlabs itself ships dark only, so light steps are derived in OKLCH
+ * from the dark hues and checked for contrast (tests/tokens.test.ts).
+ *
+ * P&L green/red follows the trader convention and is NEVER load-bearing:
+ * every value is signed text, bars anchor to zero, win/loss ships as text
+ * chips, markers differ by shape — color only reinforces.
  */
 :root {
   color-scheme: light;
-  --background: #f9f9f7;
-  --foreground: #0b0b0b;
-  --card: #fcfcfb;
-  --card-foreground: #0b0b0b;
-  --popover: #fcfcfb;
-  --popover-foreground: #0b0b0b;
-  --primary: #16161a;
+  --background: #fafafa;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #111111;
   --primary-foreground: #fafafa;
-  --secondary: #f0efec;
-  --secondary-foreground: #16161a;
-  --muted: #f0efec;
-  --muted-foreground: #52514e;
-  --accent: #f0efec;
-  --accent-foreground: #16161a;
-  --destructive: #d03b3b;
+  --secondary: #f0f0f0;
+  --secondary-foreground: #111111;
+  --muted: #f0f0f0;
+  --muted-foreground: #6b6b6b;
+  --accent: #f0f0f0;
+  --accent-foreground: #111111;
+  --destructive: #c73234;
   --destructive-foreground: #fafafa;
-  --border: #e1e0d9;
-  --input: #e1e0d9;
-  --ring: #0b7cbd;
+  --border: rgba(17, 17, 17, 0.1);
+  --input: rgba(17, 17, 17, 0.15);
+  --ring: #00779a;
   --radius: 0.5rem;
 
-  /* Brand accent (LuxAlgo blue): never the sole carrier of information. */
-  --brand: #0b7cbd;
+  /* Brand accent (fstarlabs cyan, stepped to 4.5:1 on the light page): never the sole
+     carrier of information. */
+  --brand: #00779a;
+  /* The rating star: fstarlabs gold, stepped to 3:1 on white. */
+  --rating: #b28c2a;
 
   /* viz tokens (validated: see docs/design.md) */
-  --viz-surface: #fcfcfb;
-  --ink-muted: #686760;
-  --gridline: #e1e0d9;
-  --baseline: #c3c2b7;
-  --profit: #006300;
-  --profit-fill: #0ca30c;
-  --loss: #d03b3b;
-  --neutral-mid: #f0efec;
-  --series-1: #2a78d6;
+  --viz-surface: #ffffff;
+  --ink-muted: #6b6b6b;
+  --gridline: #ebebeb;
+  --baseline: #d4d4d4;
+  --profit: #007d60;
+  --profit-fill: #29a383;
+  --loss: #c73234;
+  --neutral-mid: #f0f0f0;
+  --series-1: #1580cc;
   --series-2: #eb6834;
-  --series-3: #1baf7a;
-  --series-4: #eda100;
-  --series-5: #e87ba4;
+  --series-3: #007d60;
+  --series-4: #9f7a0b;
+  --series-5: #d55181;
   --series-6: #008300;
-  --series-7: #4a3aa7;
+  --series-7: #5a44b0;
   --series-8: #e34948;
 }
 
 .dark {
   color-scheme: dark;
-  --background: #08080a;
-  --foreground: #f4f4f4;
-  --card: #101013;
-  --card-foreground: #f4f4f4;
-  --popover: #131317;
-  --popover-foreground: #f4f4f4;
-  --primary: #ececec;
-  --primary-foreground: #131316;
-  --secondary: #1b1b20;
-  --secondary-foreground: #f4f4f4;
-  --muted: #17171b;
-  --muted-foreground: #9c9ca6;
-  --accent: #1b1b20;
-  --accent-foreground: #f4f4f4;
-  --destructive: #d03b3b;
-  --destructive-foreground: #fafafa;
-  --border: #222228;
-  --input: #26262c;
-  --ring: #1197e2;
+  --background: #111111;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --popover: #0a0a0a;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #111111;
+  --secondary: #1f1f1f;
+  --secondary-foreground: #fafafa;
+  --muted: #171717;
+  --muted-foreground: #a1a1a1;
+  --accent: #1f1f1f;
+  --accent-foreground: #fafafa;
+  --destructive: #ff6467;
+  --destructive-foreground: #111111;
+  --border: rgba(250, 250, 250, 0.1);
+  --input: rgba(250, 250, 250, 0.15);
+  --ring: #00a2c7;
 
-  --brand: #1197e2;
+  --brand: #00a2c7;
+  --rating: #e9c162;
 
-  --viz-surface: #101013;
-  --ink-muted: #8b8b95;
-  --gridline: #1e1e24;
-  --baseline: #30303a;
-  --profit: #0ca30c;
-  --profit-fill: #0ca30c;
-  --loss: #d03b3b;
-  --neutral-mid: #383835;
-  --series-1: #3987e5;
+  --viz-surface: #171717;
+  --ink-muted: #a1a1a1;
+  --gridline: #202020;
+  --baseline: #2e2e2e;
+  --profit: #29a383;
+  --profit-fill: #29a383;
+  --loss: #ff6467;
+  --neutral-mid: #2e2e2e;
+  --series-1: #1f9bf0;
   --series-2: #d95926;
-  --series-3: #199e70;
-  --series-4: #c98500;
+  --series-3: #29a383;
+  --series-4: #b28c2a;
   --series-5: #d55181;
   --series-6: #008300;
-  --series-7: #9085e9;
+  --series-7: #6e56cf;
   --series-8: #e66767;
 }
 
@@ -118,6 +128,7 @@
   --color-profit: var(--profit);
   --color-loss: var(--loss);
   --color-brand: var(--brand);
+  --color-rating: var(--rating);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

@@ -15,6 +15,7 @@ import type { MarketCsvDataset } from "@/lib/market-csv";
 import { replayFrame } from "@/lib/trade-replay";
 import { useApi } from "@/lib/use-api";
 import { fmtMoney } from "@/lib/utils";
+import { readVizTokens } from "./charts/tokens";
 import { TradeChart, type ChartExecution, type ChartTrade } from "./trade-chart";
 import { usePrivacy } from "./privacy";
 import { Button } from "./ui/button";
@@ -575,6 +576,7 @@ function ReplayChart({
         defaultInputs: () => ({}),
         create: () => ({
           start(ctx) {
+            const t = readVizTokens();
             ctx.emit({
               labels: frame.current.fills.map((fill, index) => ({
                 id: `fill-${index}`,
@@ -585,8 +587,8 @@ function ReplayChart({
                 yloc: "price" as const,
                 text: `${fill.side.toUpperCase()} ${fill.quantity}`,
                 style: "label_left" as const,
-                color: fill.side === "buy" ? "#087f23" : "#bd2626",
-                textColor: "#ffffff",
+                color: fill.side === "buy" ? t.profit : t.loss,
+                textColor: t.fillInk,
                 size: "small" as const,
                 textAlign: "center" as const,
                 fontFamily: "default" as const,
