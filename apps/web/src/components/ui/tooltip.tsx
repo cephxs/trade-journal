@@ -47,7 +47,7 @@ export function HoverHint({
       <TooltipTrigger asChild>{children}</TooltipTrigger>
       <TooltipContent side={side}>
         {heading && (
-          <div className="mb-1 text-[13px] font-semibold text-popover-foreground">{heading}</div>
+          <div className="mb-1 text-[13px] font-medium text-popover-foreground">{heading}</div>
         )}
         <div className={heading ? "text-muted-foreground" : undefined}>{content}</div>
       </TooltipContent>

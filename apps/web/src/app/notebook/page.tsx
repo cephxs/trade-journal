@@ -290,7 +290,7 @@ function NoteEditor({ note, onChanged }: { note: NoteRow; onChanged: () => void 
               setTitle(event.target.value);
               save(event.target.value, content);
             }}
-            className="notebook-editor-title border-0 px-0 text-lg font-semibold shadow-none focus-visible:ring-0"
+            className="notebook-editor-title border-0 px-0 type-h3-card shadow-none focus-visible:ring-0"
             placeholder="Title"
           />
           <Button

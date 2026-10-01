@@ -31,7 +31,7 @@ export default function LoginPage() {
           <form onSubmit={submit} className="space-y-3">
             <div className="text-center">
               <LuxAlgoMark className="mx-auto mb-2 h-6 w-7" />
-              <h1 className="text-sm font-semibold">Trade Journal</h1>
+              <h1 className="type-nav">Trade Journal</h1>
             </div>
             <Input
               type="password"

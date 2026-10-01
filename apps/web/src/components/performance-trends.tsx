@@ -69,7 +69,7 @@ export function PerformanceTrendsReport({ query }: { query: string }) {
       data-performance-trends
     >
       <div>
-        <h2 id="performance-trends-title" className="text-lg font-semibold">
+        <h2 id="performance-trends-title" className="type-h3-card">
           Performance trends
         </h2>
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
@@ -116,7 +116,7 @@ export function PerformanceTrendsReport({ query }: { query: string }) {
                     <div className="flex flex-wrap items-end justify-between gap-3">
                       <div>
                         <p className="text-xs text-muted-foreground">Latest full window</p>
-                        <p className="mt-1 text-2xl font-semibold tabular-nums">
+                        <p className="type-stat-sm mt-1">
                           {latest ? (
                             rate ? (
                               fmtPercent(latest.winRate, 1)
@@ -185,7 +185,7 @@ export function PerformanceTrendsReport({ query }: { query: string }) {
                     <h3 className="text-xs text-muted-foreground">{label}</h3>
                     {trade ? (
                       <>
-                        <p className="mt-2 text-xl font-semibold">
+                        <p className="type-stat-sm mt-2">
                           <Pnl value={trade.netPnl} currency={currency} />
                         </p>
                         <Link

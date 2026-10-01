@@ -21,7 +21,7 @@ export function RelativeDrawdownBars({ data }: { data: RelativeDrawdownPoint[] }
 
   return (
     <div className="mt-2 border-t pt-3">
-      <div className="mb-1 flex items-center justify-between gap-3 text-[10px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+      <div className="mb-1 flex items-center justify-between gap-3 type-h5 text-muted-foreground">
         <span>Relative drawdown</span>
         <span className="tnum text-loss">
           {available.length === 0 ? "Initial balance required" : `Max −${fmtPercent(maxDrawdown)}`}

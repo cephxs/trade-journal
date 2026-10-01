@@ -38,12 +38,7 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 function DialogTitle({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Title>) {
-  return (
-    <DialogPrimitive.Title
-      className={cn("pr-6 text-lg font-semibold leading-snug tracking-tight", className)}
-      {...props}
-    />
-  );
+  return <DialogPrimitive.Title className={cn("type-h3-card pr-6", className)} {...props} />;
 }
 
 function DialogDescription({

@@ -38,3 +38,26 @@ are single-hue lightness ramps. One value axis per pane, never dual-axis.
 Everything a canvas paints reads these through `readVizTokens()`; no component
 holds a hex of its own. The one exception is `review-export.tsx`: its PDF preview
 is a paper document and stays white with grey ink in both themes.
+
+## Type
+
+The roles live in `apps/web/src/app/typography.css`, cut from the fstarlabs type
+system (`fstarlabsBeUI-new/src/app/typography.css`). Geist Sans and Geist Mono load
+through `next/font`; Apple devices take the system face first, as fstarlabs does.
+
+Three rules carry over: every headline role tracks at a flat -0.06em; headlines are
+500, never 600 or 700 (`tests/type.test.ts` gates it); leading inverts against size,
+titles at 0.95 and body at 1.36 or more.
+
+| Role | Use | Cut |
+| --- | --- | --- |
+| `type-stat` | the hero number on a KPI card | 30 / 0.95 / -0.06em / 500, tabular |
+| `type-stat-sm` | a secondary number, a trade's P&L | 20 / 1.2 / -0.06em / 500, tabular |
+| `type-h3-card` | section and dialog titles | 20 / 0.95 / -0.06em / 500 |
+| `type-h3-sm` | panel and page titles | 16 / 0.95 / -0.06em / 500 |
+| `type-h5` | the caps kicker over a card (`CardTitle`) | 10 mono / 1.2 / -0.06em / 400 |
+| `type-nav` | brand label, sidebar title | 14 / 1.5 / 500 |
+
+The two `stat` roles are dashboard additions fstarlabs never needed. Body copy keeps
+Tailwind's `text-sm` and `text-xs`; fstarlabs P2 and P3 are within a pixel of them.
+Small emphasis (a P&L in a list row) is `font-medium`.

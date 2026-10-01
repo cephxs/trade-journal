@@ -51,7 +51,7 @@ function Metric({
         <HelpHint heading={title}>{hint}</HelpHint>
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-semibold tracking-tight tabular-nums">{value}</div>
+        <div className="type-stat-sm">{value}</div>
         <div className="mt-1 text-xs text-muted-foreground">{detail}</div>
       </CardContent>
     </Card>
@@ -95,7 +95,7 @@ export function CalendarPerformance({ data, query }: { data: CalendarResponse; q
     >
       <div className="flex flex-wrap items-end justify-between gap-2 pt-3">
         <div>
-          <h2 id="calendar-insights-heading" className="text-base font-semibold tracking-tight">
+          <h2 id="calendar-insights-heading" className="type-h3-sm">
             Performance insights
           </h2>
           <p className="mt-1 text-xs text-muted-foreground">

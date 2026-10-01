@@ -84,7 +84,7 @@ function Progress() {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
               <div>
                 <p className="text-xs text-muted-foreground">Daily completion</p>
-                <p className="text-4xl font-semibold">
+                <p className="type-stat">
                   {score?.score == null ? "-" : `${Math.round(score.score * 100)}%`}
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">

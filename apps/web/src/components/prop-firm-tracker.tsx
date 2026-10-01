@@ -346,7 +346,7 @@ export function PropFirmTracker() {
       <div className="space-y-5 p-4 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h2 className="text-lg font-semibold">Spending & payouts</h2>
+            <h2 className="type-h3-card">Spending & payouts</h2>
             <p className="mt-1 max-w-3xl text-sm text-muted-foreground">
               See what you paid, what came back, and your net result.
             </p>
@@ -422,7 +422,7 @@ export function PropFirmTracker() {
                 <CardContent className="flex flex-wrap items-center gap-5 py-7">
                   <Landmark className="h-10 w-10 text-muted-foreground" />
                   <div className="max-w-2xl">
-                    <h3 className="font-semibold">Start with an account or an expense</h3>
+                    <h3 className="font-medium">Start with an account or an expense</h3>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Add the firm and attempt you want to track, then record fees and actual
                       payouts. You can also log shared firm costs before linking an account. No
@@ -875,7 +875,7 @@ export function PropFirmTracker() {
                           <CardContent className="space-y-4 py-5">
                             <div className="flex items-start justify-between gap-3">
                               <div>
-                                <h3 className="font-semibold">{a.name}</h3>
+                                <h3 className="font-medium">{a.name}</h3>
                                 <p className="text-xs text-muted-foreground">
                                   {a.firm} · {label(a.program)}
                                   {a.sizeMinor !== null

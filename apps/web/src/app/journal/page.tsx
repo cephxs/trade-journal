@@ -87,7 +87,7 @@ function Journal() {
                 </div>
                 {day.stats ? (
                   <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-                    <Pnl value={day.stats.netPnl} className="w-24 font-semibold" />
+                    <Pnl value={day.stats.netPnl} className="w-24 font-medium" />
                     <span className="text-muted-foreground">
                       {day.stats.trades} trade{day.stats.trades === 1 ? "" : "s"}
                     </span>

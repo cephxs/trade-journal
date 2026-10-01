@@ -304,7 +304,7 @@ function Trades() {
                 <CardTitle>Net cumulative P&L</CardTitle>
               </CardHeader>
               <CardContent>
-                <Pnl value={m.netPnl} className="text-xl font-semibold" />
+                <Pnl value={m.netPnl} className="type-stat-sm" />
                 <span className="ml-2 text-xs text-muted-foreground">{m.closedTrades} trades</span>
               </CardContent>
             </Card>
@@ -313,7 +313,7 @@ function Trades() {
                 <CardTitle>Profit factor</CardTitle>
               </CardHeader>
               <CardContent>
-                <span className="text-xl font-semibold tnum">
+                <span className="type-stat-sm">
                   {m.profitFactorIsInfinite
                     ? "∞"
                     : m.profitFactor === null
@@ -327,7 +327,7 @@ function Trades() {
                 <CardTitle>Trade win %</CardTitle>
               </CardHeader>
               <CardContent>
-                <span className="text-xl font-semibold tnum">{fmtPercent(m.winRate)}</span>
+                <span className="type-stat-sm">{fmtPercent(m.winRate)}</span>
               </CardContent>
             </Card>
             <Card>
@@ -335,7 +335,7 @@ function Trades() {
                 <CardTitle>Avg win / loss</CardTitle>
               </CardHeader>
               <CardContent>
-                <span className="text-xl font-semibold tnum">
+                <span className="type-stat-sm">
                   {m.avgWinLossRatio === null ? "–" : fmtNumber(m.avgWinLossRatio)}
                 </span>
               </CardContent>

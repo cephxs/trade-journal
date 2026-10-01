@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./typography.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -133,7 +134,13 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-sans, system-ui, -apple-system, "Segoe UI", sans-serif);
+  /* Apple devices get the system face (SF Pro); the two leading names only
+     resolve there, so everywhere else falls through to Geist. Same stack as
+     fstarlabs. Mono stays Geist Mono everywhere. */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-sans);
 }
 
 @layer base {
