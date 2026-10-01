@@ -13,6 +13,8 @@ export interface VizTokens {
   loss: string;
   series: string[];
   foreground: string;
+  /** Ink on a solid profit/loss fill (a P&L label): dark on dark-theme fills, light on light-theme fills. */
+  fillInk: string;
   card: string;
   border: string;
 }
@@ -22,18 +24,19 @@ export const readVizTokens = (): VizTokens => {
   const style = getComputedStyle(document.documentElement);
   const v = (name: string, fallback: string) => style.getPropertyValue(name).trim() || fallback;
   return {
-    surface: v("--viz-surface", "#1a1a19"),
-    inkMuted: v("--ink-muted", "#898781"),
-    gridline: v("--gridline", "#2c2c2a"),
-    baseline: v("--baseline", "#30303a"),
-    brand: v("--brand", "#1197e2"),
-    profit: v("--profit", "#0ca30c"),
-    profitFill: v("--profit-fill", "#0ca30c"),
-    loss: v("--loss", "#d03b3b"),
-    series: [1, 2, 3, 4, 5, 6, 7, 8].map((i) => v(`--series-${i}`, "#3987e5")),
-    foreground: v("--foreground", "#f4f4f2"),
-    card: v("--card", "#1a1a19"),
-    border: v("--border", "#2c2c2a"),
+    surface: v("--viz-surface", "#171717"),
+    inkMuted: v("--ink-muted", "#a1a1a1"),
+    gridline: v("--gridline", "#202020"),
+    baseline: v("--baseline", "#2e2e2e"),
+    brand: v("--brand", "#00a2c7"),
+    profit: v("--profit", "#29a383"),
+    profitFill: v("--profit-fill", "#29a383"),
+    loss: v("--loss", "#ff6467"),
+    series: [1, 2, 3, 4, 5, 6, 7, 8].map((i) => v(`--series-${i}`, "#1f9bf0")),
+    foreground: v("--foreground", "#fafafa"),
+    fillInk: v("--primary-foreground", "#111111"),
+    card: v("--card", "#171717"),
+    border: v("--border", "rgba(250, 250, 250, 0.1)"),
   };
 };
 

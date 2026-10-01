@@ -59,7 +59,7 @@ export function TradeRating({
             onClick={() => void select(star)}
             className={cn(
               "journal-rating-star flex size-7 items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
-              star <= preview ? "text-amber-500 dark:text-amber-400" : "text-muted-foreground/50",
+              star <= preview ? "text-rating" : "text-muted-foreground/50",
             )}
           >
             <Star
