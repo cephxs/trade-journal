@@ -79,7 +79,7 @@ export const useVizTokens = (): VizTokens | null =>
 export const tooltipStyle = (t: VizTokens): React.CSSProperties => ({
   background: t.card,
   border: `1px solid ${t.border}`,
-  borderRadius: 12,
+  borderRadius: "var(--radius-xl)",
   padding: "12px 14px",
   fontSize: 13,
   lineHeight: 1.6,
