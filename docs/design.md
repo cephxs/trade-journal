@@ -49,15 +49,23 @@ Three rules carry over: every headline role tracks at a flat -0.06em; headlines 
 500, never 600 or 700 (`tests/type.test.ts` gates it); leading inverts against size,
 titles at 0.95 and body at 1.36 or more.
 
-| Role | Use | Cut |
-| --- | --- | --- |
-| `type-stat` | the hero number on a KPI card | 30 / 0.95 / -0.06em / 500, tabular |
-| `type-stat-sm` | a secondary number, a trade's P&L | 20 / 1.2 / -0.06em / 500, tabular |
-| `type-h3-card` | section and dialog titles | 20 / 0.95 / -0.06em / 500 |
-| `type-h3-sm` | panel and page titles | 16 / 0.95 / -0.06em / 500 |
-| `type-h5` | the caps kicker over a card (`CardTitle`) | 10 mono / 1.2 / -0.06em / 400 |
-| `type-nav` | brand label, sidebar title | 14 / 1.5 / 500 |
+| Role           | Use                                       | Cut                                |
+| -------------- | ----------------------------------------- | ---------------------------------- |
+| `type-stat`    | the hero number on a KPI card             | 30 / 0.95 / -0.06em / 500, tabular |
+| `type-stat-sm` | a secondary number, a trade's P&L         | 20 / 1.2 / -0.06em / 500, tabular  |
+| `type-h3-card` | section and dialog titles                 | 20 / 0.95 / -0.06em / 500          |
+| `type-h3-sm`   | panel and page titles                     | 16 / 0.95 / -0.06em / 500          |
+| `type-h5`      | the caps kicker over a card (`CardTitle`) | 10 mono / 1.2 / -0.06em / 400      |
+| `type-nav`     | brand label, sidebar title                | 14 / 1.5 / 500                     |
 
 The two `stat` roles are dashboard additions fstarlabs never needed. Body copy keeps
 Tailwind's `text-sm` and `text-xs`; fstarlabs P2 and P3 are within a pixel of them.
 Small emphasis (a P&L in a list row) is `font-medium`.
+
+## Radii
+
+One seed, `--radius: 0.625rem`, and the fstarlabs ladder off it: `sm` 0.6, `md` 0.8,
+`lg` 1, `xl` 1.4, `2xl` 1.8, `3xl` 2.2, `4xl` 2.6, so 6 / 8 / 10 / 14 / 18 / 22 / 26px.
+Nesting stays concentric at the house paddings: a `rounded-lg` list minus its `p-1` is
+6, which is `rounded-sm`. No stylesheet or component states a corner in px; the pill
+switch is the one exception, and `tests/radii.test.ts` holds it there.
